@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+  border: none;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 1rem auto 0;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
