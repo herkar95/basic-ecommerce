@@ -32,7 +32,6 @@
 }
 .header-search input:focus {
   outline: none;
-  font-style: italic;
   color: $primary-color;
 }
 
@@ -43,7 +42,7 @@
 .header-cart {
   position: absolute;
   right: 0;
-  top: -9px;
+  top: -16px;
 }
 .header-cart i {
   margin-right: 5px;

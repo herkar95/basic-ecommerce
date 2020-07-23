@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from './js/components/Header';
 import Slideshow from './js/components/Slideshow';
+import Products from './js/components/Products';
+import Navigation from './js/components/Navigation';
 
 function App() {
   // State
@@ -16,9 +18,12 @@ function App() {
     <div className='container'>
       <Header />
       <div className='main-content'>
-        <div className='left-nav'></div>
+        <div className='left-nav'>
+          <Navigation />
+        </div>
         <div className='right-content'>
-          <Slideshow slides={slides} />
+          {/* <Slideshow slides={slides} /> */}
+          <Products />
         </div>
       </div>
     </div>

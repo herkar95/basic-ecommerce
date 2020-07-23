@@ -1,0 +1,39 @@
+.product {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  .product-image {
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+  .product-name {
+    line-height: 2;
+    h3 {
+      font-size: 1.4rem;
+      font-weight: lighter;
+      text-align: center;
+    }
+  }
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .product-price {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    background: $btn-secondary;
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+  .btn-purchase {
+    font-size: 0.9rem;
+    padding: 0;
+    height: 30px;
+    width: 70px;
+    border-radius: 0;
+  }
+}
