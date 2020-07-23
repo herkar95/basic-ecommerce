@@ -1,4 +1,4 @@
-# Asos API
+# Basic e-commerce
 
 ## Project setup
 ```
