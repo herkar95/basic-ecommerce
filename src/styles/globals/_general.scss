@@ -15,3 +15,26 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
 }
+
+// Utilities
+.btn {
+  color: white;
+  text-decoration: none;
+  background-color: $primary-color;
+  border-radius: 3px;
+  padding: 0.5rem 2.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(125%);
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

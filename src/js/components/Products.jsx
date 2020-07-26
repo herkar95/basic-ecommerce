@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Product from './Product';
-import prod from '../../resources/products.json';
 
-function Products() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    setProducts(prod);
-  }, []);
-
+function Products({ products }) {
   return (
     <div className='product-container'>
       {products.map((product) => (

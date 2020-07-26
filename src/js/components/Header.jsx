@@ -9,14 +9,11 @@ function Header() {
           <img src={Logo} alt='Logo' title='Logo' />
         </div>
         <div className='header-search'>
-          <input type='text' className='text' placeholder='Sök produkt...' />
-          <button className='btn btn-search'>Sök</button>
+          <input type='text' className='text' placeholder='Search product...' />
+          <button className='btn btn-search'>Search</button>
         </div>
         <div className='header-cart'>
-          <button className='btn btn-cart'>
-            <i className='fa fa-shopping-cart'></i>
-            <span className='cart-text'>Kundvagn</span>
-          </button>
+          <i className='fa fa-shopping-cart' title='Checkout'></i>
         </div>
       </div>
     </header>

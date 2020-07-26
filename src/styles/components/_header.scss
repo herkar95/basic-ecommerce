@@ -1,7 +1,4 @@
 .header-container {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   align-items: center;
@@ -10,16 +7,22 @@
 
 .header-logo {
   margin: auto;
+  img {
+    height: 80px;
+  }
 }
-.header-cart .btn-cart {
-  background-color: $btn-secondary;
-  border-radius: 0px;
-  padding: 10px;
-  font-size: 0.8rem;
-}
-
-.header-logo img {
-  height: 80px;
+.header-cart {
+  justify-self: end;
+  margin: 1rem;
+  i {
+    color: $btn-secondary;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
 .header-search input {
@@ -29,54 +32,21 @@
   color: black;
   font-size: 1rem;
   border-bottom: 1px solid $primary-color;
-}
-.header-search input:focus {
-  outline: none;
-  color: $primary-color;
+  &:focus {
+    outline: none;
+    color: $primary-color;
+  }
+  &:before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f002';
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+    color: $primary-color;
+  }
 }
 
 .header-search .btn-search {
   vertical-align: sub;
   margin-left: 0.5rem;
-}
-.header-cart {
-  position: absolute;
-  right: 0;
-  top: -16px;
-}
-.header-cart i {
-  margin-right: 5px;
-}
-
-.header-search input:before {
-  font-family: 'Font Awesome 5 Free';
-  content: '\f002';
-  display: inline-block;
-  vertical-align: middle;
-  font-weight: 900;
-  color: $primary-color;
-}
-
-// Utilities
-.btn {
-  color: white;
-  text-decoration: none;
-  background-color: $primary-color;
-  border-radius: 3px;
-  padding: 0.5rem 2.6rem;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: all 0.4s;
-  cursor: pointer;
-}
-
-.btn:hover {
-  // background-color: rgb(97, 184, 255);
-  filter: brightness(125%);
-  text-decoration: underline;
-}
-
-.btn:focus {
-  outline: none;
 }

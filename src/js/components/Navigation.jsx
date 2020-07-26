@@ -1,15 +1,21 @@
 import React from 'react';
 
-function Navigation() {
+function Navigation({ navLinks, onFilterProducts }) {
   return (
     <nav>
       <h1>Categories</h1>
       <ul className='categories-nav'>
-        <li className='all active'>Show All</li>
-        <li className='shoes'>Shoes</li>
-        <li className='socks'>Socks</li>
-        <li className='t-shirts'>T-shirts</li>
-        <li className='hats'>Hats</li>
+        {navLinks.map((navLink) => (
+          <li
+            key={navLink.text}
+            className={
+              navLink.active ? `${navLink.class} active` : navLink.class
+            }
+            onClick={(e) => onFilterProducts(e.target)}
+          >
+            {navLink.text}
+          </li>
+        ))}
       </ul>
     </nav>
   );

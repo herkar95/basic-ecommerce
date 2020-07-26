@@ -12,36 +12,38 @@ nav {
       border-bottom: 1px solid $primary-color;
       color: $btn-secondary;
       cursor: pointer;
-      transition: color 0.2s ease;
-    }
-    li:hover {
-      color: $primary-color;
-    }
-    li.active {
-      background-color: $btn-secondary;
-      font-weight: bold;
-      color: white;
-    }
-    li::before {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 600;
-      padding-right: 6px;
-      margin-right: 6px;
-    }
-    li.all::before {
-      content: '\f138';
-    }
-    li.shoes::before {
-      content: '\f54b';
-    }
-    li.socks::before {
-      content: '\f696';
-    }
-    li.t-shirts::before {
-      content: '\f553';
-    }
-    li.hats::before {
-      content: '\f8c0';
+      transition: color 0.2s ease-in;
+      user-select: none;
+
+      &:hover {
+        color: $primary-color;
+      }
+      &.active {
+        background-color: $btn-secondary;
+        font-weight: bold;
+        color: white;
+      }
+      &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 600;
+        padding-right: 6px;
+        margin-right: 6px;
+      }
+      &.all::before {
+        content: '\f138';
+      }
+      &.shoes::before {
+        content: '\f54b';
+      }
+      &.socks::before {
+        content: '\f696';
+      }
+      &.t-shirts::before {
+        content: '\f553';
+      }
+      &.hats::before {
+        content: '\f8c0';
+      }
     }
   }
 }
