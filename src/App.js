@@ -42,6 +42,12 @@ function App() {
       active: false,
     },
   ]);
+  const [cart, setCart] = useState({
+    items: [],
+    total: 0,
+    count: 0,
+  });
+  const [open, setOpen] = useState(false);
 
   // Display products depending on active category
   function handleFilterProducts(target) {
@@ -71,9 +77,24 @@ function App() {
     }
   }
 
+  // Displays the contents of the cart
+  function handleOpenCart() {
+    setOpen(!open);
+  }
+
+  // Adds a product to the cart
+  function handleAddToCart(item) {
+    const updatedCart = {
+      items: [...cart.items, item],
+      total: cart.total + item.price,
+      count: cart.count + 1,
+    };
+    setCart(updatedCart);
+  }
+
   return (
     <div className='container'>
-      <Header />
+      <Header open={open} onOpenCart={handleOpenCart} cart={cart} />
       <div className='main-content'>
         <div className='left-nav'>
           <Navigation
@@ -83,7 +104,7 @@ function App() {
         </div>
         <div className='right-content'>
           {/* <Slideshow slides={slides} /> */}
-          <Products products={products} />
+          <Products products={products} onAddToCart={handleAddToCart} />
         </div>
       </div>
     </div>

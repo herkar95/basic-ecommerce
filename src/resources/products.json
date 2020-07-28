@@ -3,7 +3,7 @@
     "imgUrl": "https://source.unsplash.com/EfLwt5Xz5Ek",
     "name": "Air Jordan 1 Black/Blue",
     "category": "shoes",
-    "price": "110",
+    "price": 110,
     "author": "Jeremy Alford",
     "author_handle": "@jalf0rd"
   },
@@ -11,7 +11,7 @@
     "imgUrl": "https://source.unsplash.com/mWYhrOiAgmA",
     "name": "Converse All Star Black",
     "category": "shoes",
-    "price": "98",
+    "price": 98,
     "author": "Camila Damásio",
     "author_handle": "@miladamasio"
   },
@@ -19,7 +19,7 @@
     "imgUrl": "https://source.unsplash.com/4qSb_FWhHKs",
     "name": "Nike Running Shoes White",
     "category": "shoes",
-    "price": "92",
+    "price": 92,
     "author": "Joseph Barrientos",
     "author_handle": "@jbcreate_"
   },
@@ -27,7 +27,7 @@
     "imgUrl": "https://source.unsplash.com/CQfplj3y9GQ",
     "name": "Striped Socks Yellow/White",
     "category": "socks",
-    "price": "9",
+    "price": 9,
     "author": "Les Triconautes",
     "author_handle": "@triconautes"
   },
@@ -35,7 +35,7 @@
     "imgUrl": "https://source.unsplash.com/HIFNmoxkr8Y",
     "name": "Striped Socks Yellow/Pink",
     "category": "socks",
-    "price": "11",
+    "price": 11,
     "author": "Les Triconautes",
     "author_handle": "@triconautes"
   },
@@ -43,7 +43,7 @@
     "imgUrl": "https://source.unsplash.com/zOFQ8v3YBBU",
     "name": "Christmas Socks Pink",
     "category": "socks",
-    "price": "14",
+    "price": 14,
     "author": "Thái An",
     "author_handle": "@johnn21"
   },
@@ -51,7 +51,7 @@
     "imgUrl": "https://source.unsplash.com/xPJYL0l5Ii8",
     "name": "Crew Neck T-shirt Green",
     "category": "t-shirts",
-    "price": "12",
+    "price": 12,
     "author": "Keagan Henman",
     "author_handle": "@henmankkn21"
   },
@@ -59,7 +59,7 @@
     "imgUrl": "https://source.unsplash.com/fEt6Wd4t4j0",
     "name": "Cat Print Original Blue/White",
     "category": "t-shirts",
-    "price": "17",
+    "price": 17,
     "author": "Alex Haigh",
     "author_handle": "@kiikiiosaka"
   },
@@ -67,7 +67,7 @@
     "imgUrl": "https://source.unsplash.com/dG4Eb_oC5iM",
     "name": "Outcast T-shirt White",
     "category": "t-shirts",
-    "price": "19",
+    "price": 19,
     "author": "Taylor",
     "author_handle": "@xoutcastx"
   },
@@ -75,7 +75,7 @@
     "imgUrl": "https://source.unsplash.com/PH8GUKG-Do0",
     "name": "RVCA Cap Grey",
     "category": "hats",
-    "price": "22",
+    "price": 22,
     "author": "🇨🇭 Claudio Schwarz",
     "author_handle": "@purzlbaum"
   },
@@ -83,7 +83,7 @@
     "imgUrl": "https://source.unsplash.com/V0OsHPIh4To",
     "name": "Assorted Hat Collection",
     "category": "hats",
-    "price": "31",
+    "price": 31,
     "author": "Héctor J. Rivas",
     "author_handle": "@hjrc33"
   },
@@ -91,7 +91,7 @@
     "imgUrl": "https://source.unsplash.com/KYKnR-pfURc",
     "name": "Top Hat Grey/Brown",
     "category": "hats",
-    "price": "24",
+    "price": 24,
     "author": "Amélie Lazar",
     "author_handle": "@amelilazar"
   }

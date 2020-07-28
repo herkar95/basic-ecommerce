@@ -1,6 +1,7 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 
-function Product({ product }) {
+function Product({ product, onAddToCart }) {
   return (
     <div className='product'>
       <div className='product-image'>
@@ -14,7 +15,12 @@ function Product({ product }) {
           {`${product.price}$`}
         </div>
         <div className='purhcase'>
-          <button className='btn btn-purchase'>Buy</button>
+          <button
+            className='btn btn-purchase'
+            onClick={() => onAddToCart(product)}
+          >
+            Buy
+          </button>
         </div>
       </div>
     </div>
@@ -22,3 +28,9 @@ function Product({ product }) {
 }
 
 export default Product;
+
+// Proptypes
+Product.propTypes = {
+  product: Proptypes.object.isRequired,
+  onAddToCart: Proptypes.func.isRequired,
+};

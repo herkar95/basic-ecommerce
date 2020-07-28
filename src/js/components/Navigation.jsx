@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 
 function Navigation({ navLinks, onFilterProducts }) {
   return (
@@ -22,3 +23,9 @@ function Navigation({ navLinks, onFilterProducts }) {
 }
 
 export default Navigation;
+
+// Proptypes
+Navigation.propTypes = {
+  navLinks: Proptypes.array.isRequired,
+  onFilterProducts: Proptypes.func.isRequired,
+};
