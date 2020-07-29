@@ -4,24 +4,24 @@ import Proptypes from 'prop-types';
 function Product({ product, onAddToCart }) {
   return (
     <div className='product'>
-      <div className='product-image'>
-        <img src={product.imgUrl} alt={product.name} title={product.name} />
-      </div>
-      <div className='product-name'>
-        <h3>{product.name}</h3>
-      </div>
-      <div className='product-info'>
-        <div className='product-price' title='Product price'>
-          {`${product.price}$`}
+      <div className='product-container'>
+        <div className='product-image'>
+          <img
+            src={product.imgUrl}
+            alt='View product page'
+            title='View product page'
+          />
         </div>
-        <div className='purhcase'>
-          <button
-            className='btn btn-purchase'
-            onClick={() => onAddToCart(product)}
-          >
-            Buy
-          </button>
+        <div className='product-name'>
+          <h3>{product.name}</h3>
         </div>
+        <button
+          className='btn btn-purchase'
+          onClick={() => onAddToCart(product)}
+        >
+          Buy
+        </button>
+        <span className='product-price'>{`${product.price}$`}</span>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 nav {
   h1 {
     text-align: center;
-    color: $btn-secondary;
+    color: $secondary-color;
     margin: 1rem 0;
     font-weight: 300;
   }
@@ -10,7 +10,7 @@ nav {
     li {
       padding: 1rem;
       border-bottom: 1px solid $primary-color;
-      color: $btn-secondary;
+      color: $secondary-color;
       cursor: pointer;
       transition: color 0.2s ease-in;
       user-select: none;
@@ -19,7 +19,7 @@ nav {
         color: $primary-color;
       }
       &.active {
-        background-color: $btn-secondary;
+        background-color: $secondary-color;
         font-weight: bold;
         color: white;
       }

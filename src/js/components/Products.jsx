@@ -4,7 +4,7 @@ import Proptypes from 'prop-types';
 
 function Products({ products, onAddToCart }) {
   return (
-    <div className='product-container'>
+    <div className='products-container'>
       {products.map((product) => (
         <Product
           key={product.name}

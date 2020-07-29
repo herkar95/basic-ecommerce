@@ -49,6 +49,12 @@ function App() {
     count: 0,
   });
   const [open, setOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  // Shows the mobile menu on smaller screens
+  function handleShowMenu() {
+    setShowMenu(!showMenu);
+  }
 
   // Display products depending on active category
   function handleFilterProducts(target) {
@@ -118,7 +124,13 @@ function App() {
 
   return (
     <div className='container'>
-      <Header open={open} onOpenCart={handleOpenCart} cart={cart} />
+      <Header
+        open={open}
+        onOpenCart={handleOpenCart}
+        cart={cart}
+        showMenu={showMenu}
+        onShowMenu={handleShowMenu}
+      />
       <div className='main-content'>
         <div className='left-nav'>
           <Navigation

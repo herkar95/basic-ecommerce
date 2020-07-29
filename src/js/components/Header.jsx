@@ -2,10 +2,13 @@ import React from 'react';
 import Logo from '../../images/logo.png';
 import Proptypes from 'prop-types';
 
-function Header({ open, onOpenCart, cart }) {
+function Header({ open, onOpenCart, cart, showMenu, onShowMenu }) {
   return (
     <header>
-      <div className='header-container'>
+      <div className='mobile-icon' onClick={onShowMenu}>
+        <i className='fa fa-bars fa-2x'></i>
+      </div>
+      <div className={`header-container ${showMenu ? 'show' : ''}`}>
         <div className='header-logo'>
           <img src={Logo} alt='Logo' title='Logo' />
         </div>
@@ -16,11 +19,11 @@ function Header({ open, onOpenCart, cart }) {
         <div className='header-cart'>
           <i
             className='fa fa-shopping-cart'
-            title='Checkout'
+            title={open ? 'Close cart' : 'Open cart'}
             onClick={onOpenCart}
           ></i>
           {/* Add or open class on click */}
-          <div className={open ? 'cart-open open' : 'cart-open'}>
+          <div className={`cart-open ${open ? 'open' : ''}`}>
             {/* If cart is empty */}
             {cart.count === 0 ? (
               <h1>Your cart is empty</h1>
@@ -45,7 +48,9 @@ function Header({ open, onOpenCart, cart }) {
               </div>
             )}
 
-            <h3 className='cart-total'>{`Total: ${cart.total}$`}</h3>
+            {cart.items.length > 0 && (
+              <h3 className='cart-total'>{`Total: ${cart.total}$`}</h3>
+            )}
             <button className='btn'>To checkout</button>
           </div>
         </div>
