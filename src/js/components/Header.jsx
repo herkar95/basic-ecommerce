@@ -19,10 +19,33 @@ function Header({ open, onOpenCart, cart }) {
             title='Checkout'
             onClick={onOpenCart}
           ></i>
+          {/* Add or open class on click */}
           <div className={open ? 'cart-open open' : 'cart-open'}>
-            <h1>Your cart is empty</h1>
-            <div className='cart-products'></div>
-            <h3 className='cart-total'>0$</h3>
+            {/* If cart is empty */}
+            {cart.count === 0 ? (
+              <h1>Your cart is empty</h1>
+            ) : (
+              // If cart contains products, loop through them
+              <div className='cart-products'>
+                {cart.items.map((item) => (
+                  <div className='cart-product' key={item.id}>
+                    <img
+                      className='item-preview'
+                      src={item.imgUrl}
+                      alt={item.name}
+                      title={item.name}
+                    />
+                    <span className='item-name'>{item.name}</span>
+                    <span className='item-count'>{item.count}</span>
+                    <strong className='item-price'>{`${
+                      item.price * item.count
+                    }$`}</strong>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <h3 className='cart-total'>{`Total: ${cart.total}$`}</h3>
             <button className='btn'>To checkout</button>
           </div>
         </div>

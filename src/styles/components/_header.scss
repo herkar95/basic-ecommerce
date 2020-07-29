@@ -27,7 +27,7 @@
 
   .cart-open {
     position: absolute;
-    width: 400px;
+    width: 500px;
     right: 0px;
     top: 40px;
     padding: 1rem;
@@ -55,10 +55,32 @@
       height: 50px;
       background-color: $btn-secondary;
     }
-  }
-  .open {
-    opacity: 1;
-    height: auto;
+    &.open {
+      opacity: 1;
+      height: auto;
+    }
+
+    .cart-products {
+      display: flex;
+      flex-direction: column;
+
+      .cart-product {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        padding: 5px 0;
+        border-bottom: 1px solid $subtle-border;
+        color: $primary-color;
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.51);
+        font-size: 14px;
+        .item-preview {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
   }
 }
 

@@ -4,6 +4,7 @@ import Slideshow from './js/components/Slideshow';
 import Products from './js/components/Products';
 import Navigation from './js/components/Navigation';
 import prod from './resources/products.json';
+import { v4 as uuid } from 'uuid';
 
 function App() {
   // State
@@ -83,10 +84,33 @@ function App() {
   }
 
   // Adds a product to the cart
-  function handleAddToCart(item) {
+  function handleAddToCart(newProduct) {
+    // Used to check if product already exists in cart
+    let exists = false;
+
+    // If product already exists in cart, add count instead
+    let items = cart.items.map((item) => {
+      if (item.name === newProduct.name) {
+        exists = true;
+        item = {
+          ...item,
+          count: item.count + 1,
+        };
+      }
+      return item;
+    });
+
+    // It it's a new product being added
+    if (!exists) {
+      // Add ID and count props to item
+      let cartItem = { ...newProduct, id: uuid(), count: 1 };
+      items = [...cart.items, cartItem];
+    }
+
+    // Cart with updated values
     const updatedCart = {
-      items: [...cart.items, item],
-      total: cart.total + item.price,
+      items,
+      total: cart.total + newProduct.price,
       count: cart.count + 1,
     };
     setCart(updatedCart);
