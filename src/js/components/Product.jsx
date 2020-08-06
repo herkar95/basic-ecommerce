@@ -14,6 +14,13 @@ function Product({ product, onAddToCart }) {
         </div>
         <div className='product-name'>
           <h3>{product.name}</h3>
+          <a
+            href='#'
+            className='image-author'
+            title={`Submitted by ${product.author}`}
+          >
+            {product.author_handle}
+          </a>
         </div>
         <button
           className='btn btn-purchase'

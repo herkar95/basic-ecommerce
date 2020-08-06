@@ -44,7 +44,7 @@
 
         .cart-open {
           position: initial;
-          max-width: 375px;
+          max-width: 365px;
         }
       }
     }
@@ -62,7 +62,7 @@
           margin: 0 10px;
 
           li {
-            margin: 0 5px;
+            margin: 5px;
           }
         }
       }
@@ -71,5 +71,9 @@
     .products-container {
       margin-top: 1rem;
     }
+  }
+
+  .product-name > a {
+    display: none;
   }
 }
