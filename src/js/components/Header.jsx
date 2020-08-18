@@ -2,9 +2,17 @@ import React from 'react';
 import Logo from '../../images/logo.png';
 import Proptypes from 'prop-types';
 
-function Header({ open, onOpenCart, cart, showMenu, onShowMenu }) {
+function Header({
+  open,
+  onOpenCart,
+  cart,
+  showMenu,
+  onShowMenu,
+  onRemoveFromCart,
+}) {
   return (
     <header>
+      {open && <div className='modal'></div>}
       <div className='mobile-icon' onClick={onShowMenu}>
         <i className='fa fa-bars fa-2x'></i>
       </div>
@@ -22,13 +30,21 @@ function Header({ open, onOpenCart, cart, showMenu, onShowMenu }) {
             title={open ? 'Close cart' : 'Open cart'}
             onClick={onOpenCart}
           ></i>
-          {/* Add or open class on click */}
-          <div className={`cart-open ${open ? 'open' : ''}`}>
-            {/* If cart is empty */}
-            {cart.count === 0 ? (
-              <h1>Your cart is empty</h1>
-            ) : (
-              // If cart contains products, loop through them
+          {open && (
+            /* Add or open class on click */
+            <div className={`cart-open ${open ? 'open' : ''}`}>
+              {/* If cart is empty */}
+              <div className='cart-header'>
+                <h1>
+                  {cart.count === 0 ? 'Cart is empty' : 'Products in cart'}
+                </h1>
+                <i
+                  className='fas fa-times-circle'
+                  title='Close cart'
+                  onClick={onOpenCart}
+                ></i>
+              </div>
+              {/* // If cart contains products, loop through them */}
               <div className='cart-products'>
                 {cart.items.map((item) => (
                   <div className='cart-product' key={item.id}>
@@ -43,16 +59,20 @@ function Header({ open, onOpenCart, cart, showMenu, onShowMenu }) {
                     <strong className='item-price'>{`${
                       item.price * item.count
                     }$`}</strong>
+                    <i
+                      className='far fa-trash-alt'
+                      onClick={() => onRemoveFromCart(item.id)}
+                      title='Remove from cart'
+                    ></i>
                   </div>
                 ))}
               </div>
-            )}
-
-            {cart.items.length > 0 && (
-              <h3 className='cart-total'>{`Total: ${cart.total}$`}</h3>
-            )}
-            <button className='btn'>To checkout</button>
-          </div>
+              {cart.items.length > 0 && (
+                <h3 className='cart-total'>{`Total: ${cart.total}$`}</h3>
+              )}
+              <button className='btn'>To checkout</button>
+            </div>
+          )}
         </div>
       </div>
     </header>
@@ -66,4 +86,7 @@ Header.propTypes = {
   open: Proptypes.bool.isRequired,
   onOpenCart: Proptypes.func.isRequired,
   cart: Proptypes.object.isRequired,
+  showMenu: Proptypes.bool.isRequired,
+  onShowMenu: Proptypes.func.isRequired,
+  onRemoveFromCart: Proptypes.func.isRequired,
 };

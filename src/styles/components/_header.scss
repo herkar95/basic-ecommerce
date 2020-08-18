@@ -12,6 +12,16 @@ header {
     }
   }
 
+  .modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+
   .header-container {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -28,11 +38,14 @@ header {
       justify-self: end;
       margin: 1rem;
       position: relative;
+      // z-index: 11;
+
       i {
         color: $secondary-color;
         font-size: 1.5rem;
         cursor: pointer;
         transition: all 0.1s linear;
+
         &:hover {
           color: $primary-color;
         }
@@ -40,7 +53,7 @@ header {
 
       .cart-open {
         position: absolute;
-        width: 500px;
+        width: 600px;
         right: 0px;
         top: 40px;
         padding: 1rem;
@@ -51,24 +64,46 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: #fff;
-        border: 2px solid $primary-color;
+        background-color: #1b4694e3;
         box-shadow: 0px 0 20px rgba(0, 0, 0, 0.3);
-        z-index: 1;
+        z-index: 11;
+
+        .cart-header i {
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          font-size: 1.2rem;
+        }
+
+        i {
+          color: #ffffffbd;
+          font-size: 1rem;
+          margin: 0;
+
+          &:hover {
+            color: white;
+          }
+        }
 
         h1,
         h3 {
           text-align: center;
           margin: 0.8rem 0;
-          color: $secondary-color;
+          color: white;
           user-select: none;
           font-size: 1.3rem;
+        }
+
+        h1 {
+          padding-bottom: 1rem;
+          text-decoration: underline;
+          margin: 0;
         }
 
         .btn {
           width: 100%;
           height: 50px;
-          background-color: $secondary-color;
+          background-color: #0d244e;
         }
         &.open {
           opacity: 1;
@@ -81,18 +116,21 @@ header {
 
           .cart-product {
             display: grid;
-            gap: 5px;
-            grid-template-columns: 1fr 2fr 1fr 1fr;
+            grid-gap: 5px;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
             justify-items: center;
             align-items: center;
             padding: 5px 0;
-            border-bottom: 1px solid $subtle-border;
-            color: $primary-color;
+            border-bottom: 1px solid #ffffffbd;
             text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.51);
             font-size: 14px;
+            color: white;
+            padding: 1rem 0;
+
             .item-preview {
               width: 40px;
               height: 40px;
+              border: 1px solid #ffffffbd;
             }
           }
         }

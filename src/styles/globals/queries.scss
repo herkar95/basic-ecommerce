@@ -25,10 +25,6 @@
       &.show {
         display: flex;
         flex-direction: column;
-
-        i {
-          margin-bottom: 1rem;
-        }
       }
 
       .header-search {
@@ -43,8 +39,8 @@
         margin-top: 1rem;
 
         .cart-open {
-          position: initial;
-          max-width: 365px;
+          position: inherit;
+          width: 95vw;
         }
       }
     }

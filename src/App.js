@@ -122,6 +122,22 @@ function App() {
     setCart(updatedCart);
   }
 
+  // Removes a product from the cart
+  function handleRemoveFromCart(id) {
+    let items = cart.items.filter((item) => item.id !== id);
+    let total = items.reduce((t, currentItem) => {
+      return t + currentItem.price * currentItem.count;
+    }, 0);
+    let count = items.length;
+
+    const updatedCart = {
+      items,
+      total,
+      count,
+    };
+    setCart(updatedCart);
+  }
+
   return (
     <div className='container'>
       <Header
@@ -130,6 +146,7 @@ function App() {
         cart={cart}
         showMenu={showMenu}
         onShowMenu={handleShowMenu}
+        onRemoveFromCart={handleRemoveFromCart}
       />
       <div className='main-content'>
         <div className='left-nav'>
